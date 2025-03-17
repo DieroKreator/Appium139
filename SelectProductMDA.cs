@@ -9,7 +9,7 @@ public class SelectProductMDA
 {
     public static string SAUCE_USERNAME = Environment.GetEnvironmentVariable("SAUCE_USERNAME");
     public static string SAUCE_ACCESS_KEY = Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY");
-    public Uri URI = new Uri("https://{SAUCE_USERNAME}:{SAUCE_ACCESS_KEY}@ondemand.us-west-1.saucelabs.com:443/wd/hub");
+    public Uri URI = new Uri($"https://{SAUCE_USERNAME}:{SAUCE_ACCESS_KEY}@ondemand.us-west-1.saucelabs.com:443/wd/hub");
 
     public AndroidDriver<AndroidElement> driver { get; set; } // declara o objeto do Appium para leitura e gravação
 
@@ -26,7 +26,6 @@ public class SelectProductMDA
         options.AddAdditionalCapability(MobileCapabilityType.App, "storage:filename=mda-2.0.0-21.apk");
         options.AddAdditionalCapability("appPackage", "com.saucelabs.mydemoapp.android");
         options.AddAdditionalCapability("appActivity", "com.saucelabs.mydemoapp.android.view.activities.SplashActivity");
-        options.AddAdditionalCapability("appWaitActivity", "com.saucelabs.mydemoapp.android.view.activities.WelcomeActivity");
         options.AddAdditionalCapability("newCommandTimeout", 90); // espera elementos por 90s
 
         // Inicializa o Appium como Android
