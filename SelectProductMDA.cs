@@ -75,7 +75,7 @@ public class SelectProductMDA
         driver.FindElement(MobileBy.Id("com.saucelabs.mydemoapp.android:id/cartTV")).Click();
 
         // Validar o nome do produto no carrinho
-        tituloProduto = driver.FindElement(MobileBy.Id("com.saucelabs.mydemoapp.android:id/cartIV")).Text;
+        tituloProduto = driver.FindElement(MobileBy.Id("com.saucelabs.mydemoapp.android:id/titleTV")).Text;
         Assert.That(tituloProduto, Is.EqualTo("Sauce Labs Backpack"));
 
         // Validar o preco do produto no carrinho
